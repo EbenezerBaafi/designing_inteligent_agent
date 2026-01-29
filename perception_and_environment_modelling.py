@@ -1,14 +1,18 @@
+#!/usr/bin/env python3
 """
-LAB 2: PERCEPTION AND ENVIRONMENT MODELING
-==========================================
+LAB 2: PERCEPTION AND ENVIRONMENT MODELING (Enhanced with File Logging)
+=======================================================================
 
 Objective: Implement agent perception of environmental and disaster-related events
 
-This lab demonstrates:
+This enhanced version includes:
 1. Simulated disaster environment with dynamic conditions
 2. SensorAgent that periodically monitors environmental conditions
-3. Event generation and logging for disaster scenarios
+3. Event generation and logging to FILES for submission
+4. JSON and CSV export of disaster events
 
+Author: SPADE Lab Series
+Date: 2026-01-29
 """
 
 import spade
@@ -16,17 +20,28 @@ import asyncio
 import logging
 import random
 import json
+import csv
 from datetime import datetime
 from enum import Enum
 from dataclasses import dataclass, asdict
 from typing import List, Dict
+from pathlib import Path
 from spade.agent import Agent
 from spade.behaviour import PeriodicBehaviour, CyclicBehaviour
 
-# Configure logging
+# Create logs directory
+LOGS_DIR = Path("disaster_logs")
+LOGS_DIR.mkdir(exist_ok=True)
+
+# Configure logging to both console and file
+log_filename = LOGS_DIR / f"sensor_log_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler(log_filename),
+        logging.StreamHandler()
+    ]
 )
 logger = logging.getLogger(__name__)
 
@@ -95,6 +110,21 @@ class DisasterEvent:
             'damage_cost_usd': self.damage_cost_usd,
             'description': self.description
         }
+    
+    def to_csv_row(self) -> List:
+        """Convert to CSV row format"""
+        return [
+            self.event_id,
+            self.disaster_type.value,
+            self.severity.name,
+            self.severity.value,
+            self.location,
+            self.timestamp,
+            self.affected_area_km2,
+            self.casualties_estimated,
+            self.damage_cost_usd,
+            self.description
+        ]
 
 
 class DisasterEnvironment:
@@ -108,6 +138,7 @@ class DisasterEnvironment:
         self.active_disasters: List[DisasterEvent] = []
         self.event_history: List[DisasterEvent] = []
         self.event_counter = 0
+        self.conditions_history: List[EnvironmentalCondition] = []
         
     def _initialize_conditions(self) -> EnvironmentalCondition:
         """Initialize with normal environmental conditions"""
@@ -139,6 +170,9 @@ class DisasterEnvironment:
         self.current_conditions.water_level = max(0, min(20, self.current_conditions.water_level))
         
         self.current_conditions.timestamp = datetime.now().isoformat()
+        
+        # Store conditions history
+        self.conditions_history.append(EnvironmentalCondition(**asdict(self.current_conditions)))
     
     def check_for_disasters(self) -> List[DisasterEvent]:
         """
@@ -265,6 +299,33 @@ class DisasterEnvironment:
             'active_disasters': len(self.active_disasters),
             'total_events': len(self.event_history)
         }
+    
+    def export_conditions_to_json(self, filename: Path):
+        """Export conditions history to JSON file"""
+        data = [cond.to_dict() for cond in self.conditions_history]
+        with open(filename, 'w') as f:
+            json.dump(data, f, indent=2)
+    
+    def export_conditions_to_csv(self, filename: Path):
+        """Export conditions history to CSV file"""
+        if not self.conditions_history:
+            return
+        
+        with open(filename, 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(['Timestamp', 'Temperature(°C)', 'Humidity(%)', 'Wind Speed(km/h)', 
+                           'Air Quality', 'Water Level(m)', 'Seismic Activity'])
+            
+            for cond in self.conditions_history:
+                writer.writerow([
+                    cond.timestamp,
+                    cond.temperature,
+                    cond.humidity,
+                    cond.wind_speed,
+                    cond.air_quality,
+                    cond.water_level,
+                    cond.seismic_activity
+                ])
 
 
 # ============================================================================
@@ -381,7 +442,37 @@ class SensorAgent(Agent):
         
         logger.info(f"✅ SensorAgent initialized and ready to monitor")
         logger.info(f"📡 Monitoring location: {self.environment.location}")
-        logger.info(f"⏱️  Scan interval: 3 seconds\n")
+        logger.info(f"⏱️  Scan interval: 3 seconds")
+        logger.info(f"📁 Log file: {log_filename}\n")
+    
+    def export_disaster_events_json(self, filename: Path):
+        """Export disaster events to JSON file"""
+        data = {
+            'monitoring_session': {
+                'start_time': datetime.now().isoformat(),
+                'location': self.environment.location,
+                'total_events': len(self.disaster_log)
+            },
+            'events': [event.to_dict() for event in self.disaster_log]
+        }
+        
+        with open(filename, 'w') as f:
+            json.dump(data, f, indent=2)
+        
+        logger.info(f"✅ Exported {len(self.disaster_log)} events to {filename}")
+    
+    def export_disaster_events_csv(self, filename: Path):
+        """Export disaster events to CSV file"""
+        with open(filename, 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(['Event ID', 'Disaster Type', 'Severity Name', 'Severity Level',
+                           'Location', 'Timestamp', 'Affected Area (km²)', 'Casualties',
+                           'Damage Cost (USD)', 'Description'])
+            
+            for event in self.disaster_log:
+                writer.writerow(event.to_csv_row())
+        
+        logger.info(f"✅ Exported {len(self.disaster_log)} events to {filename}")
 
 
 # ============================================================================
@@ -390,6 +481,8 @@ class SensorAgent(Agent):
 
 async def main():
     """Main execution function"""
+    session_timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
+    
     print("\n" + "="*70)
     print("LAB 2: PERCEPTION AND ENVIRONMENT MODELING")
     print("Disaster Detection and Monitoring System")
@@ -401,7 +494,8 @@ async def main():
     
     print(f"🤖 Creating SensorAgent...")
     print(f"   JID: {AGENT_JID}")
-    print(f"   Mission: Environmental monitoring and disaster detection\n")
+    print(f"   Mission: Environmental monitoring and disaster detection")
+    print(f"📁 Log Directory: {LOGS_DIR.absolute()}\n")
     
     # Create sensor agent
     sensor_agent = SensorAgent(AGENT_JID, AGENT_PASSWORD)
@@ -419,6 +513,22 @@ async def main():
         
         print("\n" + "="*70)
         print("🛑 Shutting down monitoring system...")
+        print("📊 Generating final reports...")
+        
+        # Export all data to files
+        events_json = LOGS_DIR / f"disaster_events_{session_timestamp}.json"
+        events_csv = LOGS_DIR / f"disaster_events_{session_timestamp}.csv"
+        conditions_json = LOGS_DIR / f"environmental_conditions_{session_timestamp}.json"
+        conditions_csv = LOGS_DIR / f"environmental_conditions_{session_timestamp}.csv"
+        
+        # Export disaster events
+        sensor_agent.export_disaster_events_json(events_json)
+        sensor_agent.export_disaster_events_csv(events_csv)
+        
+        # Export environmental conditions
+        sensor_agent.environment.export_conditions_to_json(conditions_json)
+        sensor_agent.environment.export_conditions_to_csv(conditions_csv)
+        
         await sensor_agent.stop()
         
         # Final report
@@ -436,6 +546,16 @@ async def main():
                 print(f"   Estimated Damage: ${event.damage_cost_usd:,.2f}")
         else:
             print("\n✅ No disasters occurred during monitoring period")
+        
+        print("\n" + "="*70)
+        print("📁 GENERATED FILES (for submission)")
+        print("="*70)
+        print(f"1. Console & System Log: {log_filename}")
+        print(f"2. Disaster Events (JSON): {events_json}")
+        print(f"3. Disaster Events (CSV): {events_csv}")
+        print(f"4. Environmental Data (JSON): {conditions_json}")
+        print(f"5. Environmental Data (CSV): {conditions_csv}")
+        print("\n💡 Submit these files to your instructor!")
         
         print("\n" + "="*70)
         print("✅ Lab 2 Complete!")

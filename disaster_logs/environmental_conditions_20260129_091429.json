@@ -1,0 +1,92 @@
+[
+  {
+    "timestamp": "2026-01-29T09:14:29.625515",
+    "temperature": 20.89262843274682,
+    "humidity": 63.37443142179214,
+    "wind_speed": 14.534791776675597,
+    "air_quality": 51,
+    "water_level": 2.4759441356796605,
+    "seismic_activity": 0.2405865807682921
+  },
+  {
+    "timestamp": "2026-01-29T09:14:32.626712",
+    "temperature": 19.24460899001331,
+    "humidity": 63.72691605269433,
+    "wind_speed": 13.174723007507708,
+    "air_quality": 60,
+    "water_level": 2.4551149688229095,
+    "seismic_activity": 1.7843395547388676
+  },
+  {
+    "timestamp": "2026-01-29T09:14:35.625698",
+    "temperature": 20.26489369200851,
+    "humidity": 63.98115067904555,
+    "wind_speed": 13.962219219508915,
+    "air_quality": 56,
+    "water_level": 2.239490084929529,
+    "seismic_activity": 1.3150056663324534
+  },
+  {
+    "timestamp": "2026-01-29T09:14:38.627862",
+    "temperature": 19.209275243657157,
+    "humidity": 63.441020615118845,
+    "wind_speed": 15.100505746178056,
+    "air_quality": 54,
+    "water_level": 2.5790437580804184,
+    "seismic_activity": 0.7411599291870705
+  },
+  {
+    "timestamp": "2026-01-29T09:14:41.627168",
+    "temperature": 18.175442799751245,
+    "humidity": 61.59991508788901,
+    "wind_speed": 17.38810948333881,
+    "air_quality": 57,
+    "water_level": 2.9409305015674923,
+    "seismic_activity": 1.4219257645628942
+  },
+  {
+    "timestamp": "2026-01-29T09:14:44.628353",
+    "temperature": 18.001917952550844,
+    "humidity": 60.54253002109497,
+    "wind_speed": 19.592042262723872,
+    "air_quality": 66,
+    "water_level": 3.301157161528689,
+    "seismic_activity": 0.5338823424676302
+  },
+  {
+    "timestamp": "2026-01-29T09:14:47.626211",
+    "temperature": 16.85274796096062,
+    "humidity": 56.32620437579789,
+    "wind_speed": 16.988721260163842,
+    "air_quality": 65,
+    "water_level": 3.3081619797283786,
+    "seismic_activity": 0.7937038578580589
+  },
+  {
+    "timestamp": "2026-01-29T09:14:50.626406",
+    "temperature": 18.45726293197546,
+    "humidity": 56.58948354738027,
+    "wind_speed": 18.598346098187307,
+    "air_quality": 67,
+    "water_level": 3.771072985987947,
+    "seismic_activity": 0.9679578001527169
+  },
+  {
+    "timestamp": "2026-01-29T09:14:53.628592",
+    "temperature": 19.029565103600945,
+    "humidity": 52.22762159459934,
+    "wind_speed": 18.782767147951656,
+    "air_quality": 62,
+    "water_level": 4.262903267992844,
+    "seismic_activity": 1.3455518061598883
+  },
+  {
+    "timestamp": "2026-01-29T09:14:56.627713",
+    "temperature": 19.783309599749742,
+    "humidity": 49.36411978981273,
+    "wind_speed": 18.772219952698364,
+    "air_quality": 57,
+    "water_level": 4.4806803726235644,
+    "seismic_activity": 0.9958903965375525
+  }
+]

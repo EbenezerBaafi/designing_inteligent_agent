@@ -1,0 +1,21 @@
+{
+  "monitoring_session": {
+    "start_time": "2026-01-29T09:14:59.628570",
+    "location": "Disaster Monitoring Zone",
+    "total_events": 1
+  },
+  "events": [
+    {
+      "event_id": "EVENT-0001",
+      "disaster_type": "Flood",
+      "severity": 5,
+      "severity_name": "CRITICAL",
+      "location": "Disaster Monitoring Zone",
+      "timestamp": "2026-01-29T09:14:56.628482",
+      "affected_area_km2": 186.74,
+      "casualties_estimated": 195,
+      "damage_cost_usd": 414126487.71,
+      "description": "CRITICAL flooding detected with rising water levels"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+Event ID,Disaster Type,Severity Name,Severity Level,Location,Timestamp,Affected Area (km²),Casualties,Damage Cost (USD),Description
+EVENT-0001,Flood,CRITICAL,5,Disaster Monitoring Zone,2026-01-29T09:14:56.628482,186.74,195,414126487.71,CRITICAL flooding detected with rising water levels
