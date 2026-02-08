@@ -1,6 +1,6 @@
 # SPADE Agent Environment Setup Report
 
-**Student Name:** [Your Name]  
+**Student Name:** Ebenezer Baafi 
 **Course:** Designing Intelligent Agents  
 **Date:** January 29, 2026  
 **Assignment:** SPADE Agent Framework Implementation
