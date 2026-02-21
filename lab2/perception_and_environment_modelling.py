@@ -11,7 +11,6 @@ This enhanced version includes:
 3. Event generation and logging to FILES for submission
 4. JSON and CSV export of disaster events
 
-Author: SPADE Lab Series
 Date: 2026-01-29
 """
 
