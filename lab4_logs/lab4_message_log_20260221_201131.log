@@ -1,0 +1,6 @@
+2026-02-21 20:11:31,339 - slixmpp.features.feature_mechanisms.mechanisms - INFO - Authentication failed: not-authorized
+2026-02-21 20:11:31,340 - slixmpp.features.feature_mechanisms.mechanisms - INFO - Authentication failed: not-authorized
+2026-02-21 20:11:31,343 - slixmpp.features.feature_mechanisms.mechanisms - INFO - Authentication failed: not-authorized
+2026-02-21 20:11:31,343 - slixmpp.features.feature_mechanisms.mechanisms - ERROR - No appropriate login method.
+2026-02-21 20:11:31,343 - __main__ - ERROR - ❌ Error: Could not authenticate the agent. Check user and password or use auto_register=True
+2026-02-21 20:11:31,344 - slixmpp.xmlstream.xmlstream - INFO - connection_lost: (None,)

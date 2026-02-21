@@ -482,9 +482,9 @@ async def main():
     sensor = SensorAgent(*agents_config['sensor'])
     command = CommandCenterAgent(*agents_config['command'])
     rescue1 = RescueAgent(*agents_config['rescue1'])
-    rescue1.name = "RescueAgent1"
+    rescue1.agent_name = "RescueAgent1"
     rescue2 = RescueAgent(*agents_config['rescue2'])
-    rescue2.name = "RescueAgent2"
+    rescue2.agent_name = "RescueAgent2"
     
     try:
         print("🚀 Starting Agents...")

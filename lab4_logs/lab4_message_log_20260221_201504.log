@@ -1,0 +1,120 @@
+2026-02-21 20:15:04,882 - slixmpp.features.feature_mechanisms.mechanisms - INFO - Authentication failed: not-authorized
+2026-02-21 20:15:04,901 - slixmpp.features.feature_bind.bind - INFO - JID set to: command@localhost/160812515998337457561298
+2026-02-21 20:15:04,901 - spade.Agent - INFO - Agent command@localhost connected and authenticated.
+2026-02-21 20:15:04,902 - __main__ - INFO - 
+======================================================================
+2026-02-21 20:15:04,902 - __main__ - INFO - [SETUP] Initializing CommandCenterAgent: command@localhost
+2026-02-21 20:15:04,902 - __main__ - INFO - ======================================================================
+
+2026-02-21 20:15:04,902 - __main__ - INFO - ✅ CommandCenter initialized
+2026-02-21 20:15:04,902 - __main__ - INFO - 📡 Monitoring rescue agents: ['rescue1@localhost', 'rescue2@localhost']
+
+2026-02-21 20:15:04,956 - slixmpp.features.feature_mechanisms.mechanisms - INFO - Authentication failed: not-authorized
+2026-02-21 20:15:04,974 - slixmpp.features.feature_bind.bind - INFO - JID set to: rescue1@localhost/184344984676332112611346
+2026-02-21 20:15:04,975 - spade.Agent - INFO - Agent rescue1@localhost connected and authenticated.
+2026-02-21 20:15:04,975 - __main__ - INFO - [SETUP] Initializing rescue1: rescue1@localhost
+
+2026-02-21 20:15:04,975 - __main__ - INFO - [rescue1] Initial resources: {'rescue_teams': 6, 'medical_units': 3, 'equipment': 8}
+2026-02-21 20:15:04,975 - __main__ - INFO - ✅ rescue1 initialized and ready
+
+2026-02-21 20:15:05,041 - slixmpp.features.feature_mechanisms.mechanisms - INFO - Authentication failed: not-authorized
+2026-02-21 20:15:05,078 - slixmpp.features.feature_bind.bind - INFO - JID set to: rescue2@localhost/160708201509741459141394
+2026-02-21 20:15:05,079 - spade.Agent - INFO - Agent rescue2@localhost connected and authenticated.
+2026-02-21 20:15:05,079 - __main__ - INFO - [SETUP] Initializing rescue2: rescue2@localhost
+
+2026-02-21 20:15:05,080 - __main__ - INFO - [rescue2] Initial resources: {'rescue_teams': 8, 'medical_units': 4, 'equipment': 8}
+2026-02-21 20:15:05,080 - __main__ - INFO - ✅ rescue2 initialized and ready
+
+2026-02-21 20:15:05,149 - slixmpp.features.feature_mechanisms.mechanisms - INFO - Authentication failed: not-authorized
+2026-02-21 20:15:05,168 - slixmpp.features.feature_bind.bind - INFO - JID set to: sensor@localhost/114339708638351156141442
+2026-02-21 20:15:05,169 - spade.Agent - INFO - Agent sensor@localhost connected and authenticated.
+2026-02-21 20:15:05,169 - __main__ - INFO - [SETUP] Initializing SensorAgent: sensor@localhost
+
+2026-02-21 20:15:05,169 - __main__ - INFO - ✅ SensorAgent initialized
+
+2026-02-21 20:15:07,168 - __main__ - WARNING - 
+======================================================================
+2026-02-21 20:15:07,168 - __main__ - WARNING - [SensorAgent] 🚨 DISASTER DETECTED
+2026-02-21 20:15:07,169 - __main__ - WARNING - ======================================================================
+2026-02-21 20:15:07,169 - __main__ - WARNING - Event ID: EVENT-6442
+2026-02-21 20:15:07,169 - __main__ - WARNING - Type: Hurricane
+2026-02-21 20:15:07,169 - __main__ - WARNING - Severity: MINIMAL
+2026-02-21 20:15:07,169 - __main__ - WARNING - ======================================================================
+
+2026-02-21 20:15:07,169 - __main__ - INFO - [SensorAgent] 📤 INFORM message sent to CommandCenter
+
+2026-02-21 20:15:07,169 - spade.behaviour - INFO - Killing behavior OneShotBehaviour/DetectDisasterBehaviour with exit code: None
+2026-02-21 20:15:07,170 - __main__ - WARNING - 
+======================================================================
+2026-02-21 20:15:07,170 - __main__ - WARNING - [CommandCenter] 🚨 DISASTER ALERT RECEIVED
+2026-02-21 20:15:07,170 - __main__ - WARNING - ======================================================================
+2026-02-21 20:15:07,170 - __main__ - WARNING - From: sensor@localhost
+2026-02-21 20:15:07,170 - __main__ - WARNING - Performative: INFORM
+2026-02-21 20:15:07,170 - __main__ - WARNING - Event ID: EVENT-6442
+2026-02-21 20:15:07,170 - __main__ - WARNING - Type: Hurricane
+2026-02-21 20:15:07,170 - __main__ - WARNING - Severity: MINIMAL
+2026-02-21 20:15:07,170 - __main__ - WARNING - ======================================================================
+
+2026-02-21 20:15:07,170 - __main__ - INFO - [CommandCenter] 📤 Requesting resources from rescue agents...
+2026-02-21 20:15:07,170 - __main__ - INFO - [CommandCenter] ✉️  REQUEST sent to rescue1@localhost
+2026-02-21 20:15:07,170 - __main__ - INFO -   Resources requested: {'rescue_teams': 2, 'medical_units': 1, 'equipment': 3}
+
+2026-02-21 20:15:07,171 - __main__ - INFO - [CommandCenter] ✉️  REQUEST sent to rescue2@localhost
+2026-02-21 20:15:07,171 - __main__ - INFO -   Resources requested: {'rescue_teams': 2, 'medical_units': 1, 'equipment': 3}
+
+2026-02-21 20:15:07,171 - __main__ - INFO - 
+[rescue1] 📨 RESOURCE REQUEST RECEIVED
+2026-02-21 20:15:07,171 - __main__ - INFO - From: command@localhost
+2026-02-21 20:15:07,171 - __main__ - INFO - Performative: REQUEST
+2026-02-21 20:15:07,171 - __main__ - INFO - Event ID: EVENT-6442
+2026-02-21 20:15:07,171 - __main__ - INFO - Resources Requested: {'rescue_teams': 2, 'medical_units': 1, 'equipment': 3}
+
+2026-02-21 20:15:07,171 - __main__ - INFO - 
+[rescue2] 📨 RESOURCE REQUEST RECEIVED
+2026-02-21 20:15:07,171 - __main__ - INFO - From: command@localhost
+2026-02-21 20:15:07,171 - __main__ - INFO - Performative: REQUEST
+2026-02-21 20:15:07,171 - __main__ - INFO - Event ID: EVENT-6442
+2026-02-21 20:15:07,171 - __main__ - INFO - Resources Requested: {'rescue_teams': 2, 'medical_units': 1, 'equipment': 3}
+
+2026-02-21 20:15:07,671 - __main__ - INFO - [rescue1] ✅ INFORM response sent
+2026-02-21 20:15:07,671 - __main__ - INFO -   Resources allocated: {'rescue_teams': 2, 'medical_units': 1, 'equipment': 3}
+2026-02-21 20:15:07,672 - __main__ - INFO -   Remaining: {'rescue_teams': 4, 'medical_units': 2, 'equipment': 5}
+
+2026-02-21 20:15:07,672 - __main__ - INFO - [rescue2] ✅ INFORM response sent
+2026-02-21 20:15:07,672 - __main__ - INFO -   Resources allocated: {'rescue_teams': 2, 'medical_units': 1, 'equipment': 3}
+2026-02-21 20:15:07,672 - __main__ - INFO -   Remaining: {'rescue_teams': 6, 'medical_units': 3, 'equipment': 5}
+
+2026-02-21 20:15:07,672 - __main__ - INFO - 
+[CommandCenter] 📨 RESOURCE RESPONSE RECEIVED
+2026-02-21 20:15:07,672 - __main__ - INFO - From: rescue1@localhost
+2026-02-21 20:15:07,672 - __main__ - INFO - Performative: INFORM
+2026-02-21 20:15:07,672 - __main__ - INFO - Status: resources_allocated
+2026-02-21 20:15:07,672 - __main__ - INFO - Resources: {'rescue_teams': 2, 'medical_units': 1, 'equipment': 3}
+
+2026-02-21 20:15:07,673 - __main__ - INFO - 
+[CommandCenter] 📨 RESOURCE RESPONSE RECEIVED
+2026-02-21 20:15:07,673 - __main__ - INFO - From: rescue2@localhost
+2026-02-21 20:15:07,673 - __main__ - INFO - Performative: INFORM
+2026-02-21 20:15:07,673 - __main__ - INFO - Status: resources_allocated
+2026-02-21 20:15:07,673 - __main__ - INFO - Resources: {'rescue_teams': 2, 'medical_units': 1, 'equipment': 3}
+
+2026-02-21 20:15:20,272 - slixmpp.xmlstream.xmlstream - INFO - connection_lost: (None,)
+2026-02-21 20:15:20,274 - spade.Agent - INFO - Client disconnected.
+2026-02-21 20:15:20,274 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveAlertBehaviour with exit code: None
+2026-02-21 20:15:20,275 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveResponseBehaviour with exit code: None
+2026-02-21 20:15:20,377 - slixmpp.xmlstream.xmlstream - INFO - connection_lost: (None,)
+2026-02-21 20:15:20,377 - spade.Agent - INFO - Client disconnected.
+2026-02-21 20:15:20,378 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveRequestBehaviour with exit code: None
+2026-02-21 20:15:20,480 - slixmpp.xmlstream.xmlstream - INFO - connection_lost: (None,)
+2026-02-21 20:15:20,480 - spade.Agent - INFO - Client disconnected.
+2026-02-21 20:15:20,481 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveRequestBehaviour with exit code: None
+2026-02-21 20:15:20,583 - slixmpp.xmlstream.xmlstream - INFO - connection_lost: (None,)
+2026-02-21 20:15:20,583 - spade.Agent - INFO - Client disconnected.
+2026-02-21 20:15:20,584 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveAlertBehaviour with exit code: None
+2026-02-21 20:15:20,585 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveResponseBehaviour with exit code: None
+2026-02-21 20:15:20,585 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveRequestBehaviour with exit code: None
+2026-02-21 20:15:20,585 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveRequestBehaviour with exit code: None
+2026-02-21 20:15:20,585 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveAlertBehaviour with exit code: None
+2026-02-21 20:15:20,586 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveResponseBehaviour with exit code: None
+2026-02-21 20:15:20,586 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveRequestBehaviour with exit code: None
+2026-02-21 20:15:20,586 - spade.behaviour - INFO - Killing behavior CyclicBehaviour/ReceiveRequestBehaviour with exit code: None

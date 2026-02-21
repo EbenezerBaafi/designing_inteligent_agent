@@ -1,0 +1,182 @@
+{
+  "session_timestamp": "20260221_201504",
+  "total_messages": 10,
+  "messages": [
+    {
+      "timestamp": "2026-02-21T20:15:07.169544",
+      "sender": "sensor@localhost",
+      "receiver": "command@localhost",
+      "performative": "inform",
+      "message_type": "disaster_alert",
+      "content": {
+        "event_id": "EVENT-6442",
+        "disaster_type": "Hurricane",
+        "severity": 1,
+        "severity_name": "MINIMAL",
+        "location": "Disaster Zone Alpha",
+        "timestamp": "2026-02-21T20:15:07.168708"
+      },
+      "conversation_id": "EVENT-6442"
+    },
+    {
+      "timestamp": "2026-02-21T20:15:07.169927",
+      "sender": "sensor@localhost",
+      "receiver": "command@localhost",
+      "performative": "inform",
+      "message_type": "disaster_alert",
+      "content": {
+        "event_id": "EVENT-6442",
+        "disaster_type": "Hurricane",
+        "severity": 1,
+        "severity_name": "MINIMAL",
+        "location": "Disaster Zone Alpha",
+        "timestamp": "2026-02-21T20:15:07.168708"
+      },
+      "conversation_id": "EVENT-6442"
+    },
+    {
+      "timestamp": "2026-02-21T20:15:07.170778",
+      "sender": "command@localhost",
+      "receiver": "rescue1@localhost",
+      "performative": "request",
+      "message_type": "resource_request",
+      "content": {
+        "event_id": "EVENT-6442",
+        "disaster_type": "Hurricane",
+        "severity": 1,
+        "resources_requested": {
+          "rescue_teams": 2,
+          "medical_units": 1,
+          "equipment": 3
+        }
+      },
+      "conversation_id": "EVENT-6442"
+    },
+    {
+      "timestamp": "2026-02-21T20:15:07.171042",
+      "sender": "command@localhost",
+      "receiver": "rescue2@localhost",
+      "performative": "request",
+      "message_type": "resource_request",
+      "content": {
+        "event_id": "EVENT-6442",
+        "disaster_type": "Hurricane",
+        "severity": 1,
+        "resources_requested": {
+          "rescue_teams": 2,
+          "medical_units": 1,
+          "equipment": 3
+        }
+      },
+      "conversation_id": "EVENT-6442"
+    },
+    {
+      "timestamp": "2026-02-21T20:15:07.171280",
+      "sender": "command@localhost",
+      "receiver": "rescue1@localhost",
+      "performative": "request",
+      "message_type": "resource_request",
+      "content": {
+        "event_id": "EVENT-6442",
+        "disaster_type": "Hurricane",
+        "severity": 1,
+        "resources_requested": {
+          "rescue_teams": 2,
+          "medical_units": 1,
+          "equipment": 3
+        }
+      },
+      "conversation_id": "EVENT-6442"
+    },
+    {
+      "timestamp": "2026-02-21T20:15:07.171617",
+      "sender": "command@localhost",
+      "receiver": "rescue2@localhost",
+      "performative": "request",
+      "message_type": "resource_request",
+      "content": {
+        "event_id": "EVENT-6442",
+        "disaster_type": "Hurricane",
+        "severity": 1,
+        "resources_requested": {
+          "rescue_teams": 2,
+          "medical_units": 1,
+          "equipment": 3
+        }
+      },
+      "conversation_id": "EVENT-6442"
+    },
+    {
+      "timestamp": "2026-02-21T20:15:07.671724",
+      "sender": "rescue1@localhost",
+      "receiver": "command@localhost",
+      "performative": "inform",
+      "message_type": "resource_response",
+      "content": {
+        "event_id": "EVENT-6442",
+        "agent_id": "rescue1",
+        "status": "resources_allocated",
+        "resources_available": {
+          "rescue_teams": 2,
+          "medical_units": 1,
+          "equipment": 3
+        }
+      },
+      "conversation_id": "EVENT-6442"
+    },
+    {
+      "timestamp": "2026-02-21T20:15:07.672247",
+      "sender": "rescue2@localhost",
+      "receiver": "command@localhost",
+      "performative": "inform",
+      "message_type": "resource_response",
+      "content": {
+        "event_id": "EVENT-6442",
+        "agent_id": "rescue2",
+        "status": "resources_allocated",
+        "resources_available": {
+          "rescue_teams": 2,
+          "medical_units": 1,
+          "equipment": 3
+        }
+      },
+      "conversation_id": "EVENT-6442"
+    },
+    {
+      "timestamp": "2026-02-21T20:15:07.672638",
+      "sender": "rescue1@localhost",
+      "receiver": "command@localhost",
+      "performative": "inform",
+      "message_type": "resource_response",
+      "content": {
+        "event_id": "EVENT-6442",
+        "agent_id": "rescue1",
+        "status": "resources_allocated",
+        "resources_available": {
+          "rescue_teams": 2,
+          "medical_units": 1,
+          "equipment": 3
+        }
+      },
+      "conversation_id": "EVENT-6442"
+    },
+    {
+      "timestamp": "2026-02-21T20:15:07.673088",
+      "sender": "rescue2@localhost",
+      "receiver": "command@localhost",
+      "performative": "inform",
+      "message_type": "resource_response",
+      "content": {
+        "event_id": "EVENT-6442",
+        "agent_id": "rescue2",
+        "status": "resources_allocated",
+        "resources_available": {
+          "rescue_teams": 2,
+          "medical_units": 1,
+          "equipment": 3
+        }
+      },
+      "conversation_id": "EVENT-6442"
+    }
+  ]
+}
