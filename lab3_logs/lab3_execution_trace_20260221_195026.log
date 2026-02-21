@@ -1,0 +1,251 @@
+2026-02-21 19:50:26,258 - slixmpp.features.feature_mechanisms.mechanisms - INFO - Authentication failed: not-authorized
+2026-02-21 19:50:26,279 - slixmpp.features.feature_bind.bind - INFO - JID set to: response@localhost/108102900070015278171122
+2026-02-21 19:50:26,280 - spade.Agent - INFO - Agent response@localhost connected and authenticated.
+2026-02-21 19:50:26,280 - __main__ - INFO - 
+======================================================================
+2026-02-21 19:50:26,280 - __main__ - INFO - [SETUP] Initializing ResponseAgent: response@localhost
+2026-02-21 19:50:26,280 - __main__ - INFO - ======================================================================
+
+2026-02-21 19:50:26,280 - __main__ - INFO - ✅ ResponseAgent initialized with FSM
+2026-02-21 19:50:26,280 - __main__ - INFO - 📊 FSM States: IDLE → ANALYZING → PLANNING → RESPONDING → MONITORING → COMPLETED
+2026-02-21 19:50:26,280 - __main__ - INFO - 📁 Execution trace: lab3_logs/lab3_execution_trace_20260221_195026.log
+
+2026-02-21 19:50:26,361 - spade.behaviour - INFO - FSM running state IDLE
+2026-02-21 19:50:26,361 - __main__ - INFO - 
+[ResponseAgent] 💤 STATE: IDLE - Waiting for disaster alerts...
+2026-02-21 19:50:26,367 - slixmpp.features.feature_mechanisms.mechanisms - INFO - Authentication failed: not-authorized
+2026-02-21 19:50:26,388 - slixmpp.features.feature_bind.bind - INFO - JID set to: sensor@localhost/173950549440718585291170
+2026-02-21 19:50:26,389 - spade.Agent - INFO - Agent sensor@localhost connected and authenticated.
+2026-02-21 19:50:26,389 - __main__ - INFO - [SETUP] Initializing SensorAgent: sensor@localhost
+
+2026-02-21 19:50:26,389 - __main__ - INFO - ✅ SensorAgent initialized
+2026-02-21 19:50:26,389 - __main__ - INFO - 🔍 Monitoring for disasters every 5 seconds
+
+2026-02-21 19:50:26,390 - __main__ - WARNING - 
+======================================================================
+2026-02-21 19:50:26,390 - __main__ - WARNING - [SensorAgent] 🚨 DISASTER DETECTED!
+2026-02-21 19:50:26,390 - __main__ - WARNING - ======================================================================
+2026-02-21 19:50:26,390 - __main__ - WARNING - Event ID: EVENT-0001
+2026-02-21 19:50:26,390 - __main__ - WARNING - Type: Hurricane
+2026-02-21 19:50:26,390 - __main__ - WARNING - Severity: MODERATE (Level 3/5)
+2026-02-21 19:50:26,390 - __main__ - WARNING - Location: Disaster Zone Alpha
+2026-02-21 19:50:26,390 - __main__ - WARNING - ======================================================================
+
+2026-02-21 19:50:26,391 - __main__ - INFO - [SensorAgent] 📤 Alert sent to ResponseAgent
+
+2026-02-21 19:50:26,391 - __main__ - WARNING - [ResponseAgent] 🚨 ALERT RECEIVED!
+2026-02-21 19:50:26,391 - __main__ - INFO - [ResponseAgent] 📩 Event: Hurricane (Severity: MODERATE)
+2026-02-21 19:50:26,391 - spade.behaviour - INFO - FSM transiting from IDLE to ANALYZING.
+2026-02-21 19:50:26,391 - spade.behaviour - INFO - FSM running state ANALYZING
+2026-02-21 19:50:26,391 - __main__ - INFO - 
+[ResponseAgent] 🔍 STATE: ANALYZING - Assessing disaster situation...
+2026-02-21 19:50:27,392 - __main__ - INFO - [ResponseAgent] 📊 Analysis Complete:
+2026-02-21 19:50:27,392 - __main__ - INFO -   - Disaster Type: Hurricane
+2026-02-21 19:50:27,392 - __main__ - INFO -   - Severity Level: 3/5
+2026-02-21 19:50:27,393 - __main__ - INFO -   - Affected Area: 166.6905467347823 km²
+2026-02-21 19:50:27,393 - __main__ - INFO -   - Estimated Casualties: 312
+2026-02-21 19:50:27,393 - spade.behaviour - INFO - FSM transiting from ANALYZING to PLANNING.
+2026-02-21 19:50:27,393 - spade.behaviour - INFO - FSM running state PLANNING
+2026-02-21 19:50:27,393 - __main__ - INFO - 
+[ResponseAgent] 📋 STATE: PLANNING - Creating response plan...
+2026-02-21 19:50:28,394 - __main__ - INFO - [ResponseAgent] 🎯 Response Plan Created:
+2026-02-21 19:50:28,394 - __main__ - INFO -   1. Deploy rescue resources (Priority: 5)
+2026-02-21 19:50:28,395 - __main__ - INFO -   2. Evacuate affected civilians (Priority: 5)
+2026-02-21 19:50:28,395 - __main__ - INFO -   3. Provide medical assistance (Priority: 4)
+2026-02-21 19:50:28,395 - __main__ - INFO -   4. Monitor recovery progress (Priority: 2)
+2026-02-21 19:50:28,395 - spade.behaviour - INFO - FSM transiting from PLANNING to RESPONDING.
+2026-02-21 19:50:28,395 - spade.behaviour - INFO - FSM running state RESPONDING
+2026-02-21 19:50:28,395 - __main__ - INFO - 
+[response] 🚑 STATE: RESPONDING - Executing response actions...
+2026-02-21 19:50:28,396 - __main__ - INFO - [response] ⚡ Executing: Deploy rescue resources
+2026-02-21 19:50:28,896 - __main__ - INFO - [response] ✅ Completed: Deploy rescue resources
+2026-02-21 19:50:28,896 - __main__ - INFO - [response] ⚡ Executing: Evacuate affected civilians
+2026-02-21 19:50:29,397 - __main__ - INFO - [response] ✅ Completed: Evacuate affected civilians
+2026-02-21 19:50:29,397 - __main__ - INFO - [response] ⚡ Executing: Provide medical assistance
+2026-02-21 19:50:29,898 - __main__ - INFO - [response] ✅ Completed: Provide medical assistance
+2026-02-21 19:50:29,898 - __main__ - INFO - [response] ⚡ Executing: Monitor recovery progress
+2026-02-21 19:50:30,399 - __main__ - INFO - [response] ✅ Completed: Monitor recovery progress
+2026-02-21 19:50:30,399 - spade.behaviour - INFO - FSM transiting from RESPONDING to MONITORING.
+2026-02-21 19:50:30,399 - spade.behaviour - INFO - FSM running state MONITORING
+2026-02-21 19:50:30,400 - __main__ - INFO - 
+[ResponseAgent] 📡 STATE: MONITORING - Monitoring recovery progress...
+2026-02-21 19:50:31,400 - __main__ - INFO - [ResponseAgent] 📊 Goal Status:
+2026-02-21 19:50:31,400 - __main__ - INFO -   - Total Goals: 5
+2026-02-21 19:50:31,400 - __main__ - INFO -   - Completed: 5
+2026-02-21 19:50:31,400 - __main__ - INFO -   - Success Rate: 100.0%
+2026-02-21 19:50:31,400 - spade.behaviour - INFO - FSM transiting from MONITORING to COMPLETED.
+2026-02-21 19:50:31,400 - spade.behaviour - INFO - FSM running state COMPLETED
+2026-02-21 19:50:31,400 - __main__ - INFO - 
+[ResponseAgent] 🏁 STATE: COMPLETED - Response cycle finished!
+2026-02-21 19:50:31,401 - __main__ - INFO - [ResponseAgent] ✅ Successfully responded to EVENT-0001
+2026-02-21 19:50:31,401 - __main__ - INFO - 
+======================================================================
+2026-02-21 19:50:31,401 - __main__ - INFO - [ResponseAgent] 📄 RESPONSE SUMMARY REPORT
+2026-02-21 19:50:31,401 - __main__ - INFO - ======================================================================
+2026-02-21 19:50:31,401 - __main__ - INFO - ✅ Assess disaster situation - Priority 5
+2026-02-21 19:50:31,401 - __main__ - INFO - ✅ Deploy rescue resources - Priority 5
+2026-02-21 19:50:31,401 - __main__ - INFO - ✅ Evacuate affected civilians - Priority 5
+2026-02-21 19:50:31,401 - __main__ - INFO - ✅ Provide medical assistance - Priority 4
+2026-02-21 19:50:31,401 - __main__ - INFO - ✅ Monitor recovery progress - Priority 2
+2026-02-21 19:50:31,401 - __main__ - INFO - ======================================================================
+
+2026-02-21 19:50:31,401 - __main__ - INFO - [ResponseAgent] 🔄 Returning to IDLE state...
+2026-02-21 19:50:31,401 - spade.behaviour - INFO - FSM transiting from COMPLETED to IDLE.
+2026-02-21 19:50:31,401 - spade.behaviour - INFO - FSM running state IDLE
+2026-02-21 19:50:31,402 - __main__ - INFO - 
+[ResponseAgent] 💤 STATE: IDLE - Waiting for disaster alerts...
+2026-02-21 19:50:36,402 - spade.behaviour - INFO - FSM transiting from IDLE to IDLE.
+2026-02-21 19:50:36,402 - spade.behaviour - INFO - FSM running state IDLE
+2026-02-21 19:50:36,402 - __main__ - INFO - 
+[ResponseAgent] 💤 STATE: IDLE - Waiting for disaster alerts...
+2026-02-21 19:50:41,402 - spade.behaviour - INFO - FSM transiting from IDLE to IDLE.
+2026-02-21 19:50:41,402 - spade.behaviour - INFO - FSM running state IDLE
+2026-02-21 19:50:41,402 - __main__ - INFO - 
+[ResponseAgent] 💤 STATE: IDLE - Waiting for disaster alerts...
+2026-02-21 19:50:46,402 - spade.behaviour - INFO - FSM transiting from IDLE to IDLE.
+2026-02-21 19:50:46,403 - spade.behaviour - INFO - FSM running state IDLE
+2026-02-21 19:50:46,403 - __main__ - INFO - 
+[ResponseAgent] 💤 STATE: IDLE - Waiting for disaster alerts...
+2026-02-21 19:50:51,394 - __main__ - WARNING - 
+======================================================================
+2026-02-21 19:50:51,394 - __main__ - WARNING - [SensorAgent] 🚨 DISASTER DETECTED!
+2026-02-21 19:50:51,394 - __main__ - WARNING - ======================================================================
+2026-02-21 19:50:51,394 - __main__ - WARNING - Event ID: EVENT-0002
+2026-02-21 19:50:51,394 - __main__ - WARNING - Type: Fire
+2026-02-21 19:50:51,394 - __main__ - WARNING - Severity: HIGH (Level 4/5)
+2026-02-21 19:50:51,394 - __main__ - WARNING - Location: Disaster Zone Alpha
+2026-02-21 19:50:51,394 - __main__ - WARNING - ======================================================================
+
+2026-02-21 19:50:51,395 - __main__ - INFO - [SensorAgent] 📤 Alert sent to ResponseAgent
+
+2026-02-21 19:50:51,395 - __main__ - WARNING - [ResponseAgent] 🚨 ALERT RECEIVED!
+2026-02-21 19:50:51,395 - __main__ - INFO - [ResponseAgent] 📩 Event: Fire (Severity: HIGH)
+2026-02-21 19:50:51,395 - spade.behaviour - INFO - FSM transiting from IDLE to ANALYZING.
+2026-02-21 19:50:51,395 - spade.behaviour - INFO - FSM running state ANALYZING
+2026-02-21 19:50:51,395 - __main__ - INFO - 
+[ResponseAgent] 🔍 STATE: ANALYZING - Assessing disaster situation...
+2026-02-21 19:50:52,396 - __main__ - INFO - [ResponseAgent] 📊 Analysis Complete:
+2026-02-21 19:50:52,397 - __main__ - INFO -   - Disaster Type: Fire
+2026-02-21 19:50:52,397 - __main__ - INFO -   - Severity Level: 4/5
+2026-02-21 19:50:52,397 - __main__ - INFO -   - Affected Area: 286.0318573810625 km²
+2026-02-21 19:50:52,397 - __main__ - INFO -   - Estimated Casualties: 176
+2026-02-21 19:50:52,397 - spade.behaviour - INFO - FSM transiting from ANALYZING to PLANNING.
+2026-02-21 19:50:52,397 - spade.behaviour - INFO - FSM running state PLANNING
+2026-02-21 19:50:52,398 - __main__ - INFO - 
+[ResponseAgent] 📋 STATE: PLANNING - Creating response plan...
+2026-02-21 19:50:53,399 - __main__ - INFO - [ResponseAgent] 🎯 Response Plan Created:
+2026-02-21 19:50:53,399 - __main__ - INFO -   1. Deploy rescue resources (Priority: 5)
+2026-02-21 19:50:53,399 - __main__ - INFO -   2. Evacuate affected civilians (Priority: 5)
+2026-02-21 19:50:53,399 - __main__ - INFO -   3. Provide medical assistance (Priority: 4)
+2026-02-21 19:50:53,399 - __main__ - INFO -   4. Restore critical infrastructure (Priority: 3)
+2026-02-21 19:50:53,399 - __main__ - INFO -   5. Monitor recovery progress (Priority: 2)
+2026-02-21 19:50:53,399 - spade.behaviour - INFO - FSM transiting from PLANNING to RESPONDING.
+2026-02-21 19:50:53,399 - spade.behaviour - INFO - FSM running state RESPONDING
+2026-02-21 19:50:53,400 - __main__ - INFO - 
+[response] 🚑 STATE: RESPONDING - Executing response actions...
+2026-02-21 19:50:53,400 - __main__ - INFO - [response] ⚡ Executing: Deploy rescue resources
+2026-02-21 19:50:53,900 - __main__ - INFO - [response] ✅ Completed: Deploy rescue resources
+2026-02-21 19:50:53,901 - __main__ - INFO - [response] ⚡ Executing: Evacuate affected civilians
+2026-02-21 19:50:54,401 - __main__ - INFO - [response] ✅ Completed: Evacuate affected civilians
+2026-02-21 19:50:54,402 - __main__ - INFO - [response] ⚡ Executing: Provide medical assistance
+2026-02-21 19:50:54,902 - __main__ - INFO - [response] ✅ Completed: Provide medical assistance
+2026-02-21 19:50:54,903 - __main__ - INFO - [response] ⚡ Executing: Restore critical infrastructure
+2026-02-21 19:50:55,403 - __main__ - INFO - [response] ✅ Completed: Restore critical infrastructure
+2026-02-21 19:50:55,404 - __main__ - INFO - [response] ⚡ Executing: Monitor recovery progress
+2026-02-21 19:50:55,904 - __main__ - INFO - [response] ✅ Completed: Monitor recovery progress
+2026-02-21 19:50:55,905 - spade.behaviour - INFO - FSM transiting from RESPONDING to MONITORING.
+2026-02-21 19:50:55,905 - spade.behaviour - INFO - FSM running state MONITORING
+2026-02-21 19:50:55,905 - __main__ - INFO - 
+[ResponseAgent] 📡 STATE: MONITORING - Monitoring recovery progress...
+2026-02-21 19:50:56,905 - __main__ - INFO - [ResponseAgent] 📊 Goal Status:
+2026-02-21 19:50:56,905 - __main__ - INFO -   - Total Goals: 11
+2026-02-21 19:50:56,905 - __main__ - INFO -   - Completed: 11
+2026-02-21 19:50:56,905 - __main__ - INFO -   - Success Rate: 100.0%
+2026-02-21 19:50:56,906 - spade.behaviour - INFO - FSM transiting from MONITORING to COMPLETED.
+2026-02-21 19:50:56,906 - spade.behaviour - INFO - FSM running state COMPLETED
+2026-02-21 19:50:56,906 - __main__ - INFO - 
+[ResponseAgent] 🏁 STATE: COMPLETED - Response cycle finished!
+2026-02-21 19:50:56,906 - __main__ - INFO - [ResponseAgent] ✅ Successfully responded to EVENT-0002
+2026-02-21 19:50:56,906 - __main__ - INFO - 
+======================================================================
+2026-02-21 19:50:56,906 - __main__ - INFO - [ResponseAgent] 📄 RESPONSE SUMMARY REPORT
+2026-02-21 19:50:56,906 - __main__ - INFO - ======================================================================
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Assess disaster situation - Priority 5
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Deploy rescue resources - Priority 5
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Evacuate affected civilians - Priority 5
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Provide medical assistance - Priority 4
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Monitor recovery progress - Priority 2
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Assess disaster situation - Priority 5
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Deploy rescue resources - Priority 5
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Evacuate affected civilians - Priority 5
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Provide medical assistance - Priority 4
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Restore critical infrastructure - Priority 3
+2026-02-21 19:50:56,906 - __main__ - INFO - ✅ Monitor recovery progress - Priority 2
+2026-02-21 19:50:56,907 - __main__ - INFO - ======================================================================
+
+2026-02-21 19:50:56,907 - __main__ - INFO - [ResponseAgent] 🔄 Returning to IDLE state...
+2026-02-21 19:50:56,907 - spade.behaviour - INFO - FSM transiting from COMPLETED to IDLE.
+2026-02-21 19:50:56,907 - spade.behaviour - INFO - FSM running state IDLE
+2026-02-21 19:50:56,907 - __main__ - INFO - 
+[ResponseAgent] 💤 STATE: IDLE - Waiting for disaster alerts...
+2026-02-21 19:51:01,395 - __main__ - WARNING - 
+======================================================================
+2026-02-21 19:51:01,395 - __main__ - WARNING - [SensorAgent] 🚨 DISASTER DETECTED!
+2026-02-21 19:51:01,395 - __main__ - WARNING - ======================================================================
+2026-02-21 19:51:01,395 - __main__ - WARNING - Event ID: EVENT-0003
+2026-02-21 19:51:01,395 - __main__ - WARNING - Type: Fire
+2026-02-21 19:51:01,395 - __main__ - WARNING - Severity: HIGH (Level 4/5)
+2026-02-21 19:51:01,395 - __main__ - WARNING - Location: Disaster Zone Alpha
+2026-02-21 19:51:01,395 - __main__ - WARNING - ======================================================================
+
+2026-02-21 19:51:01,396 - __main__ - INFO - [SensorAgent] 📤 Alert sent to ResponseAgent
+
+2026-02-21 19:51:01,396 - __main__ - WARNING - [ResponseAgent] 🚨 ALERT RECEIVED!
+2026-02-21 19:51:01,396 - __main__ - INFO - [ResponseAgent] 📩 Event: Fire (Severity: HIGH)
+2026-02-21 19:51:01,396 - spade.behaviour - INFO - FSM transiting from IDLE to ANALYZING.
+2026-02-21 19:51:01,396 - spade.behaviour - INFO - FSM running state ANALYZING
+2026-02-21 19:51:01,396 - __main__ - INFO - 
+[ResponseAgent] 🔍 STATE: ANALYZING - Assessing disaster situation...
+2026-02-21 19:51:02,398 - __main__ - INFO - [ResponseAgent] 📊 Analysis Complete:
+2026-02-21 19:51:02,398 - __main__ - INFO -   - Disaster Type: Fire
+2026-02-21 19:51:02,398 - __main__ - INFO -   - Severity Level: 4/5
+2026-02-21 19:51:02,398 - __main__ - INFO -   - Affected Area: 154.46212995120823 km²
+2026-02-21 19:51:02,398 - __main__ - INFO -   - Estimated Casualties: 368
+2026-02-21 19:51:02,398 - spade.behaviour - INFO - FSM transiting from ANALYZING to PLANNING.
+2026-02-21 19:51:02,398 - spade.behaviour - INFO - FSM running state PLANNING
+2026-02-21 19:51:02,398 - __main__ - INFO - 
+[ResponseAgent] 📋 STATE: PLANNING - Creating response plan...
+2026-02-21 19:51:03,400 - __main__ - INFO - [ResponseAgent] 🎯 Response Plan Created:
+2026-02-21 19:51:03,400 - __main__ - INFO -   1. Deploy rescue resources (Priority: 5)
+2026-02-21 19:51:03,400 - __main__ - INFO -   2. Evacuate affected civilians (Priority: 5)
+2026-02-21 19:51:03,400 - __main__ - INFO -   3. Provide medical assistance (Priority: 4)
+2026-02-21 19:51:03,400 - __main__ - INFO -   4. Restore critical infrastructure (Priority: 3)
+2026-02-21 19:51:03,400 - __main__ - INFO -   5. Monitor recovery progress (Priority: 2)
+2026-02-21 19:51:03,400 - spade.behaviour - INFO - FSM transiting from PLANNING to RESPONDING.
+2026-02-21 19:51:03,400 - spade.behaviour - INFO - FSM running state RESPONDING
+2026-02-21 19:51:03,400 - __main__ - INFO - 
+[response] 🚑 STATE: RESPONDING - Executing response actions...
+2026-02-21 19:51:03,400 - __main__ - INFO - [response] ⚡ Executing: Deploy rescue resources
+2026-02-21 19:51:03,901 - __main__ - INFO - [response] ✅ Completed: Deploy rescue resources
+2026-02-21 19:51:03,902 - __main__ - INFO - [response] ⚡ Executing: Evacuate affected civilians
+2026-02-21 19:51:04,402 - __main__ - INFO - [response] ✅ Completed: Evacuate affected civilians
+2026-02-21 19:51:04,403 - __main__ - INFO - [response] ⚡ Executing: Provide medical assistance
+2026-02-21 19:51:04,903 - __main__ - INFO - [response] ✅ Completed: Provide medical assistance
+2026-02-21 19:51:04,903 - __main__ - INFO - [response] ⚡ Executing: Restore critical infrastructure
+2026-02-21 19:51:05,404 - __main__ - INFO - [response] ✅ Completed: Restore critical infrastructure
+2026-02-21 19:51:05,404 - __main__ - INFO - [response] ⚡ Executing: Monitor recovery progress
+2026-02-21 19:51:05,905 - __main__ - INFO - [response] ✅ Completed: Monitor recovery progress
+2026-02-21 19:51:05,905 - spade.behaviour - INFO - FSM transiting from RESPONDING to MONITORING.
+2026-02-21 19:51:05,905 - spade.behaviour - INFO - FSM running state MONITORING
+2026-02-21 19:51:05,905 - __main__ - INFO - 
+[ResponseAgent] 📡 STATE: MONITORING - Monitoring recovery progress...
+2026-02-21 19:51:06,390 - __main__ - INFO - ✅ Exported FSM trace to lab3_logs/fsm_execution_trace_20260221_195026.json
+2026-02-21 19:51:06,391 - spade.behaviour - INFO - Killing behavior PeriodicBehaviour/DisasterDetectionBehaviour with exit code: None
+2026-02-21 19:51:06,391 - spade.behaviour - INFO - Killing behavior PeriodicBehaviour/DisasterDetectionBehaviour with exit code: None
+2026-02-21 19:51:06,495 - slixmpp.xmlstream.xmlstream - INFO - connection_lost: (None,)
+2026-02-21 19:51:06,496 - spade.Agent - INFO - Client disconnected.
+2026-02-21 19:51:06,496 - spade.behaviour - INFO - Killing behavior FSMBehaviour/ResponseAgentFSM with exit code: None
+2026-02-21 19:51:06,599 - slixmpp.xmlstream.xmlstream - INFO - connection_lost: (None,)
+2026-02-21 19:51:06,599 - spade.Agent - INFO - Client disconnected.
+2026-02-21 19:51:06,600 - spade.behaviour - INFO - Killing behavior FSMBehaviour/ResponseAgentFSM with exit code: None
+2026-02-21 19:51:06,600 - spade.behaviour - INFO - Killing behavior FSMBehaviour/ResponseAgentFSM with exit code: None

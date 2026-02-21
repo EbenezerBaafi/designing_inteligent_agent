@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 LAB 3: GOALS, EVENTS, AND REACTIVE BEHAVIOR
 ============================================
@@ -9,6 +10,8 @@ This lab demonstrates:
 2. Event-triggered behavior from sensor reports
 3. Finite State Machine (FSM) implementation for reactive agents
 
+Author: SPADE Lab Series
+Date: 2026-01-29
 """
 
 import spade
@@ -142,13 +145,13 @@ class IdleState(State):
     IDLE State: Waiting for disaster events
     """
     async def run(self):
-        logger.info(f"\n[{self.agent.name}] 💤 STATE: IDLE - Waiting for disaster alerts...")
+        logger.info(f"\n[{self.agent.agent_name}] 💤 STATE: IDLE - Waiting for disaster alerts...")
         
         # Wait for incoming disaster alert message
         msg = await self.receive(timeout=5)
         
         if msg:
-            logger.warning(f"[{self.agent.name}] 🚨 ALERT RECEIVED!")
+            logger.warning(f"[{self.agent.agent_name}] 🚨 ALERT RECEIVED!")
             
             # Parse disaster event from message
             try:
@@ -161,13 +164,13 @@ class IdleState(State):
                     'event_id': event_data.get('event_id', 'UNKNOWN')
                 })
                 
-                logger.info(f"[{self.agent.name}] 📩 Event: {event_data.get('disaster_type')} "
+                logger.info(f"[{self.agent.agent_name}] 📩 Event: {event_data.get('disaster_type')} "
                           f"(Severity: {event_data.get('severity_name')})")
                 
                 # Transition to ANALYZING state
                 self.set_next_state(STATE_ANALYZING)
             except json.JSONDecodeError:
-                logger.error(f"[{self.agent.name}] ❌ Failed to parse event data")
+                logger.error(f"[{self.agent.agent_name}] ❌ Failed to parse event data")
                 self.set_next_state(STATE_IDLE)
         else:
             # No message, stay idle
@@ -179,7 +182,7 @@ class AnalyzingState(State):
     ANALYZING State: Assess the disaster situation
     """
     async def run(self):
-        logger.info(f"\n[{self.agent.name}] 🔍 STATE: ANALYZING - Assessing disaster situation...")
+        logger.info(f"\n[{self.agent.agent_name}] 🔍 STATE: ANALYZING - Assessing disaster situation...")
         
         event = self.agent.current_event
         severity = event.get('severity', 1)
@@ -198,7 +201,7 @@ class AnalyzingState(State):
         )
         self.agent.goals.append(goal)
         
-        logger.info(f"[{self.agent.name}] 📊 Analysis Complete:")
+        logger.info(f"[{self.agent.agent_name}] 📊 Analysis Complete:")
         logger.info(f"  - Disaster Type: {disaster_type}")
         logger.info(f"  - Severity Level: {severity}/5")
         logger.info(f"  - Affected Area: {event.get('affected_area_km2', 0)} km²")
@@ -224,7 +227,7 @@ class PlanningState(State):
     PLANNING State: Create response plan and define goals
     """
     async def run(self):
-        logger.info(f"\n[{self.agent.name}] 📋 STATE: PLANNING - Creating response plan...")
+        logger.info(f"\n[{self.agent.agent_name}] 📋 STATE: PLANNING - Creating response plan...")
         
         event = self.agent.current_event
         severity = event.get('severity', 1)
@@ -235,7 +238,7 @@ class PlanningState(State):
         # Generate goals based on severity
         response_goals = self._generate_response_goals(severity)
         
-        logger.info(f"[{self.agent.name}] 🎯 Response Plan Created:")
+        logger.info(f"[{self.agent.agent_name}] 🎯 Response Plan Created:")
         for i, goal in enumerate(response_goals, 1):
             self.agent.goals.append(goal)
             logger.info(f"  {i}. {goal.goal_type.value} (Priority: {goal.priority})")
@@ -326,7 +329,7 @@ class MonitoringState(State):
     MONITORING State: Monitor recovery and verify goals
     """
     async def run(self):
-        logger.info(f"\n[{self.agent.name}] 📡 STATE: MONITORING - Monitoring recovery progress...")
+        logger.info(f"\n[{self.agent.agent_name}] 📡 STATE: MONITORING - Monitoring recovery progress...")
         
         # Simulate monitoring
         await asyncio.sleep(1)
@@ -335,7 +338,7 @@ class MonitoringState(State):
         total_goals = len(self.agent.goals)
         completed_goals = len([g for g in self.agent.goals if g.status == "completed"])
         
-        logger.info(f"[{self.agent.name}] 📊 Goal Status:")
+        logger.info(f"[{self.agent.agent_name}] 📊 Goal Status:")
         logger.info(f"  - Total Goals: {total_goals}")
         logger.info(f"  - Completed: {completed_goals}")
         logger.info(f"  - Success Rate: {(completed_goals/total_goals)*100:.1f}%")
@@ -357,10 +360,10 @@ class CompletedState(State):
     COMPLETED State: Response cycle finished
     """
     async def run(self):
-        logger.info(f"\n[{self.agent.name}] 🏁 STATE: COMPLETED - Response cycle finished!")
+        logger.info(f"\n[{self.agent.agent_name}] 🏁 STATE: COMPLETED - Response cycle finished!")
         
         event = self.agent.current_event
-        logger.info(f"[{self.agent.name}] ✅ Successfully responded to {event.get('event_id')}")
+        logger.info(f"[{self.agent.agent_name}] ✅ Successfully responded to {event.get('event_id')}")
         
         # Generate response report
         self._generate_report()
@@ -376,13 +379,13 @@ class CompletedState(State):
         self.agent.current_event = None
         
         # Return to IDLE state for next event
-        logger.info(f"[{self.agent.name}] 🔄 Returning to IDLE state...")
+        logger.info(f"[{self.agent.agent_name}] 🔄 Returning to IDLE state...")
         self.set_next_state(STATE_IDLE)
     
     def _generate_report(self):
         """Generate response summary report"""
         logger.info(f"\n{'='*70}")
-        logger.info(f"[{self.agent.name}] 📄 RESPONSE SUMMARY REPORT")
+        logger.info(f"[{self.agent.agent_name}] 📄 RESPONSE SUMMARY REPORT")
         logger.info(f"{'='*70}")
         
         # Goals summary
@@ -408,7 +411,7 @@ class ResponseAgent(Agent):
         logger.info(f"[SETUP] Initializing ResponseAgent: {self.jid}")
         logger.info(f"{'='*70}\n")
         
-        self.name = "ResponseAgent"
+        self.agent_name = "ResponseAgent"  # Changed from self.name to self.agent_name
         self.current_event = None
         self.goals: List[Goal] = []
         self.fsm_trace: List[Dict] = []

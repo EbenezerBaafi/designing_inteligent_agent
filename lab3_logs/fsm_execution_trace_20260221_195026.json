@@ -1,0 +1,244 @@
+{
+  "agent": "response@localhost",
+  "session_start": "2026-02-21T19:51:06.390239",
+  "total_states_visited": 16,
+  "goals_created": 17,
+  "trace": [
+    {
+      "state": "IDLE",
+      "timestamp": "2026-02-21T19:50:26.391460",
+      "action": "Received disaster alert",
+      "event_id": "EVENT-0001"
+    },
+    {
+      "state": "ANALYZING",
+      "timestamp": "2026-02-21T19:50:27.393130",
+      "action": "Completed situation assessment",
+      "severity": 3
+    },
+    {
+      "state": "PLANNING",
+      "timestamp": "2026-02-21T19:50:28.395566",
+      "action": "Response plan created",
+      "goals_count": 4
+    },
+    {
+      "state": "RESPONDING",
+      "timestamp": "2026-02-21T19:50:30.399768",
+      "action": "Response actions executed",
+      "goals_completed": 4
+    },
+    {
+      "state": "MONITORING",
+      "timestamp": "2026-02-21T19:50:31.400750",
+      "action": "Recovery monitoring completed",
+      "goals_completed": 5,
+      "total_goals": 5
+    },
+    {
+      "state": "COMPLETED",
+      "timestamp": "2026-02-21T19:50:31.401709",
+      "action": "Response cycle completed",
+      "event_id": "EVENT-0001"
+    },
+    {
+      "state": "IDLE",
+      "timestamp": "2026-02-21T19:50:51.395395",
+      "action": "Received disaster alert",
+      "event_id": "EVENT-0002"
+    },
+    {
+      "state": "ANALYZING",
+      "timestamp": "2026-02-21T19:50:52.397801",
+      "action": "Completed situation assessment",
+      "severity": 4
+    },
+    {
+      "state": "PLANNING",
+      "timestamp": "2026-02-21T19:50:53.399799",
+      "action": "Response plan created",
+      "goals_count": 5
+    },
+    {
+      "state": "RESPONDING",
+      "timestamp": "2026-02-21T19:50:55.904977",
+      "action": "Response actions executed",
+      "goals_completed": 5
+    },
+    {
+      "state": "MONITORING",
+      "timestamp": "2026-02-21T19:50:56.906040",
+      "action": "Recovery monitoring completed",
+      "goals_completed": 11,
+      "total_goals": 11
+    },
+    {
+      "state": "COMPLETED",
+      "timestamp": "2026-02-21T19:50:56.907073",
+      "action": "Response cycle completed",
+      "event_id": "EVENT-0002"
+    },
+    {
+      "state": "IDLE",
+      "timestamp": "2026-02-21T19:51:01.396485",
+      "action": "Received disaster alert",
+      "event_id": "EVENT-0003"
+    },
+    {
+      "state": "ANALYZING",
+      "timestamp": "2026-02-21T19:51:02.398419",
+      "action": "Completed situation assessment",
+      "severity": 4
+    },
+    {
+      "state": "PLANNING",
+      "timestamp": "2026-02-21T19:51:03.400624",
+      "action": "Response plan created",
+      "goals_count": 5
+    },
+    {
+      "state": "RESPONDING",
+      "timestamp": "2026-02-21T19:51:05.905221",
+      "action": "Response actions executed",
+      "goals_completed": 5
+    }
+  ],
+  "goals": [
+    {
+      "goal_id": "GOAL-001",
+      "goal_type": "Assess disaster situation",
+      "priority": 5,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:27.392648",
+      "completed_at": "2026-02-21T19:50:27.393123"
+    },
+    {
+      "goal_id": "GOAL-002",
+      "goal_type": "Deploy rescue resources",
+      "priority": 5,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:28.393987",
+      "completed_at": "2026-02-21T19:50:28.896695"
+    },
+    {
+      "goal_id": "GOAL-003",
+      "goal_type": "Evacuate affected civilians",
+      "priority": 5,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:28.394023",
+      "completed_at": "2026-02-21T19:50:29.397686"
+    },
+    {
+      "goal_id": "GOAL-004",
+      "goal_type": "Provide medical assistance",
+      "priority": 4,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:28.394030",
+      "completed_at": "2026-02-21T19:50:29.898582"
+    },
+    {
+      "goal_id": "GOAL-005",
+      "goal_type": "Monitor recovery progress",
+      "priority": 2,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:28.394034",
+      "completed_at": "2026-02-21T19:50:30.399541"
+    },
+    {
+      "goal_id": "GOAL-006",
+      "goal_type": "Assess disaster situation",
+      "priority": 5,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:52.396822",
+      "completed_at": "2026-02-21T19:50:52.397792"
+    },
+    {
+      "goal_id": "GOAL-007",
+      "goal_type": "Deploy rescue resources",
+      "priority": 5,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:53.399270",
+      "completed_at": "2026-02-21T19:50:53.900909"
+    },
+    {
+      "goal_id": "GOAL-008",
+      "goal_type": "Evacuate affected civilians",
+      "priority": 5,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:53.399292",
+      "completed_at": "2026-02-21T19:50:54.401841"
+    },
+    {
+      "goal_id": "GOAL-009",
+      "goal_type": "Provide medical assistance",
+      "priority": 4,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:53.399296",
+      "completed_at": "2026-02-21T19:50:54.902775"
+    },
+    {
+      "goal_id": "GOAL-010",
+      "goal_type": "Restore critical infrastructure",
+      "priority": 3,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:53.399299",
+      "completed_at": "2026-02-21T19:50:55.403758"
+    },
+    {
+      "goal_id": "GOAL-011",
+      "goal_type": "Monitor recovery progress",
+      "priority": 2,
+      "status": "completed",
+      "created_at": "2026-02-21T19:50:53.399302",
+      "completed_at": "2026-02-21T19:50:55.904722"
+    },
+    {
+      "goal_id": "GOAL-012",
+      "goal_type": "Assess disaster situation",
+      "priority": 5,
+      "status": "completed",
+      "created_at": "2026-02-21T19:51:02.397957",
+      "completed_at": "2026-02-21T19:51:02.398413"
+    },
+    {
+      "goal_id": "GOAL-013",
+      "goal_type": "Deploy rescue resources",
+      "priority": 5,
+      "status": "completed",
+      "created_at": "2026-02-21T19:51:03.400081",
+      "completed_at": "2026-02-21T19:51:03.901609"
+    },
+    {
+      "goal_id": "GOAL-014",
+      "goal_type": "Evacuate affected civilians",
+      "priority": 5,
+      "status": "completed",
+      "created_at": "2026-02-21T19:51:03.400107",
+      "completed_at": "2026-02-21T19:51:04.402928"
+    },
+    {
+      "goal_id": "GOAL-015",
+      "goal_type": "Provide medical assistance",
+      "priority": 4,
+      "status": "completed",
+      "created_at": "2026-02-21T19:51:03.400113",
+      "completed_at": "2026-02-21T19:51:04.903413"
+    },
+    {
+      "goal_id": "GOAL-016",
+      "goal_type": "Restore critical infrastructure",
+      "priority": 3,
+      "status": "completed",
+      "created_at": "2026-02-21T19:51:03.400118",
+      "completed_at": "2026-02-21T19:51:05.404345"
+    },
+    {
+      "goal_id": "GOAL-017",
+      "goal_type": "Monitor recovery progress",
+      "priority": 2,
+      "status": "completed",
+      "created_at": "2026-02-21T19:51:03.400122",
+      "completed_at": "2026-02-21T19:51:05.904956"
+    }
+  ]
+}
